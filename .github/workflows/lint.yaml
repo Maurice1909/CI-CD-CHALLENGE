@@ -1,0 +1,25 @@
+# using super-linter-action to lint code
+name: Lint Code Base
+
+on: [push, pull_request]
+
+jobs:
+  super-linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   
+    
+      - name: Lint Code Base 
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BRANCH: main
+          
+          # --- Current Language Support ---
+          VALIDATE_PYTHON_FLAKE8: true
+          VALIDATE_DOCKERFILE_HADOLINT: true
+          VALIDATE_TERRAFORM_TFLINT: true
