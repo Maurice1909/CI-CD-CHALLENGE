@@ -21,18 +21,12 @@ A hands-on DevOps project demonstrating automated Continuous Integration (CI) an
     - `lint.yml`: Runs Super-Linter for code quality.
     - `docker-push.yml`: Handles the build and registry push.
 
-## 🚦 Getting Started
-To run this container locally:
-```bash
-docker pull <your-username>/<your-repo-name>:latest
-docker run -p 5005:5005 <your-username>/<your-repo-name>:latest
-```
 ---
 ## 📚 Previous Learnings
 This project builds upon my core GitHub Actions foundation, which can be found in my [Learning Repo](https://github.com/Maurice1909/CI.CD-Github-Actions). 
 Key concepts applied from that repo include:
 - **Secrets Management**: Safely handling DockerHub credentials.
-- **Matrix Strategies**: Understanding how to scale builds across versions.
+- **Testing & Linting**: For better efficiency and maintainability of code.
 - **Manual Triggers**: Providing flexibility in when workflows are executed.
 
 
